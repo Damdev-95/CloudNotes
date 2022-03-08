@@ -1,0 +1,118 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Untitled0.ipynb",
+      "provenance": [],
+      "authorship_tag": "ABX9TyNA0Pjwes09r9uUM92OZ+yn",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Damdev-95/CloudNotes/blob/master/Class%20instance%201\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "numbers = [1, 2, 6, 3, 1, 1, 5] \n",
+        "\n",
+        "unique_nums = set(numbers)\n",
+        "print(unique_nums)\n",
+        "\n",
+        "\n",
+        "artist = {'Chagall', 'Kandinskij', 'Dalí', 'da Vinci', 'Picasso', 'Warhol', 'Basquiat'}\n",
+        "\n",
+        "print('Turner' in artist) # check if there is Turner in the set artist\n",
+        "artist.add('Turner')\n",
+        "print(artist.pop()) #remove the last item"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "7AhiMpoihTGK",
+        "outputId": "891c3c04-8b20-4355-efe0-3f624effc73d"
+      },
+      "execution_count": 1,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "{1, 2, 3, 5, 6}\n",
+            "False\n",
+            "Dalí\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import datetime\n",
+        "\n",
+        "class Employee:\n",
+        "    def __init__(self, full_name, birthday):\n",
+        "        self.name = full_name\n",
+        "        self.birthday = birthday\n",
+        "        # extract first and last name \n",
+        "        name_pieces = full_name.split(\" \")\n",
+        "        self.first_name = name_pieces[0]\n",
+        "        self.last_name = name_pieces[-1]\n",
+        "        \n",
+        "        \n",
+        "    def age(self):\n",
+        "        today = datetime.date(2022, 5, 10)\n",
+        "        yyyy = int(self.birthday [0:4])\n",
+        "        mm = int(self.birthday [4:6])\n",
+        "        dd = int(self.birthday [6:8])\n",
+        "        \n",
+        "        dob = datetime.date(yyyy, mm, dd)\n",
+        "        age_in_days = (today - dob).days \n",
+        "        age_in_years = age_in_days / 365\n",
+        "        \n",
+        "        return int(age_in_years)\n",
+        "    \n",
+        "\n",
+        "staff1 = Employee(\"Alao Tijani\", \"19951117\")\n",
+        "staff2 = Employee(\"Hadiza Tanko\", \"19690311\")\n",
+        "print (staff1.name, staff1.age())\n",
+        "print (staff2.name, staff2.age())"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "1KtB3hjM4S4C",
+        "outputId": "31159ccc-1c85-4fb9-ddbf-911648141789"
+      },
+      "execution_count": 4,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Alao Tijani 26\n",
+            "Hadiza Tanko 53\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
